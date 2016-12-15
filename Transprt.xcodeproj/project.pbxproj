@@ -12,6 +12,7 @@
 		306F8E781E03495E003867E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 306F8E761E03495E003867E8 /* Main.storyboard */; };
 		306F8E7A1E03495E003867E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 306F8E791E03495E003867E8 /* Assets.xcassets */; };
 		306F8E7D1E03495E003867E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 306F8E7B1E03495E003867E8 /* LaunchScreen.storyboard */; };
+		76369B8036464594A9F4D0C1 /* Pods_Transprt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70EAD90B97F5EC9B4DF5A36 /* Pods_Transprt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		306F8E791E03495E003867E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		306F8E7C1E03495E003867E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		306F8E7E1E03495E003867E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D5AF03A069A4A7A8E3A1B9C /* Pods-Transprt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transprt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Transprt/Pods-Transprt.debug.xcconfig"; sourceTree = "<group>"; };
+		B70EAD90B97F5EC9B4DF5A36 /* Pods_Transprt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Transprt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2E9BB6B8EB2184FF2C4C30B /* Pods-Transprt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transprt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Transprt/Pods-Transprt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76369B8036464594A9F4D0C1 /* Pods_Transprt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16672A1F4F64B12C5A7A5591 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B70EAD90B97F5EC9B4DF5A36 /* Pods_Transprt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C289347B7B8DBAF58777719 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D5AF03A069A4A7A8E3A1B9C /* Pods-Transprt.debug.xcconfig */,
+				C2E9BB6B8EB2184FF2C4C30B /* Pods-Transprt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		306F8E661E03495E003867E8 = {
 			isa = PBXGroup;
 			children = (
 				306F8E711E03495E003867E8 /* Transprt */,
 				306F8E701E03495E003867E8 /* Products */,
+				1C289347B7B8DBAF58777719 /* Pods */,
+				16672A1F4F64B12C5A7A5591 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 306F8E811E03495E003867E8 /* Build configuration list for PBXNativeTarget "Transprt" */;
 			buildPhases = (
+				0EAC4A1D030E8A81C27E92D9 /* [CP] Check Pods Manifest.lock */,
 				306F8E6B1E03495E003867E8 /* Sources */,
 				306F8E6C1E03495E003867E8 /* Frameworks */,
 				306F8E6D1E03495E003867E8 /* Resources */,
+				4B3E88E3C433CC1DACF8AAD2 /* [CP] Embed Pods Frameworks */,
+				08883E270681862F9D82CCBB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08883E270681862F9D82CCBB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Transprt/Pods-Transprt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0EAC4A1D030E8A81C27E92D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4B3E88E3C433CC1DACF8AAD2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Transprt/Pods-Transprt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		306F8E6B1E03495E003867E8 /* Sources */ = {
@@ -257,10 +332,12 @@
 		};
 		306F8E821E03495E003867E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D5AF03A069A4A7A8E3A1B9C /* Pods-Transprt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 59ZDL3D4PJ;
 				INFOPLIST_FILE = Transprt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.rlabs.Transprt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,10 +347,12 @@
 		};
 		306F8E831E03495E003867E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2E9BB6B8EB2184FF2C4C30B /* Pods-Transprt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 59ZDL3D4PJ;
 				INFOPLIST_FILE = Transprt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.rlabs.Transprt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +379,7 @@
 				306F8E831E03495E003867E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
