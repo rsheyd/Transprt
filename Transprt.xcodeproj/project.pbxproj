@@ -13,8 +13,7 @@
 		306F8E7A1E03495E003867E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 306F8E791E03495E003867E8 /* Assets.xcassets */; };
 		306F8E7D1E03495E003867E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 306F8E7B1E03495E003867E8 /* LaunchScreen.storyboard */; };
 		30A9C2D11E0354D4001EA55B /* attribution.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C2D01E0354D4001EA55B /* attribution.txt */; };
-		30A9C2D31E0355D5001EA55B /* croppedBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C2D21E0355D5001EA55B /* croppedBG.jpg */; };
-		30A9C2D51E0356C4001EA55B /* croppedBG2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C2D41E0356C4001EA55B /* croppedBG2.jpg */; };
+		30A9C2D71E035C14001EA55B /* croppedBG3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C2D61E035C14001EA55B /* croppedBG3.jpg */; };
 		76369B8036464594A9F4D0C1 /* Pods_Transprt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70EAD90B97F5EC9B4DF5A36 /* Pods_Transprt.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +26,7 @@
 		306F8E7C1E03495E003867E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		306F8E7E1E03495E003867E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30A9C2D01E0354D4001EA55B /* attribution.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = attribution.txt; sourceTree = "<group>"; };
-		30A9C2D21E0355D5001EA55B /* croppedBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = croppedBG.jpg; sourceTree = "<group>"; };
-		30A9C2D41E0356C4001EA55B /* croppedBG2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = croppedBG2.jpg; sourceTree = "<group>"; };
+		30A9C2D61E035C14001EA55B /* croppedBG3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = croppedBG3.jpg; sourceTree = "<group>"; };
 		5D5AF03A069A4A7A8E3A1B9C /* Pods-Transprt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transprt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Transprt/Pods-Transprt.debug.xcconfig"; sourceTree = "<group>"; };
 		B70EAD90B97F5EC9B4DF5A36 /* Pods_Transprt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Transprt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E9BB6B8EB2184FF2C4C30B /* Pods-Transprt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transprt.release.xcconfig"; path = "Pods/Target Support Files/Pods-Transprt/Pods-Transprt.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,8 +96,7 @@
 		30A9C2CF1E0354C3001EA55B /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				30A9C2D21E0355D5001EA55B /* croppedBG.jpg */,
-				30A9C2D41E0356C4001EA55B /* croppedBG2.jpg */,
+				30A9C2D61E035C14001EA55B /* croppedBG3.jpg */,
 				30A9C2D01E0354D4001EA55B /* attribution.txt */,
 			);
 			name = Media;
@@ -168,12 +165,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30A9C2D31E0355D5001EA55B /* croppedBG.jpg in Resources */,
+				30A9C2D71E035C14001EA55B /* croppedBG3.jpg in Resources */,
 				306F8E7D1E03495E003867E8 /* LaunchScreen.storyboard in Resources */,
 				306F8E7A1E03495E003867E8 /* Assets.xcassets in Resources */,
 				30A9C2D11E0354D4001EA55B /* attribution.txt in Resources */,
 				306F8E781E03495E003867E8 /* Main.storyboard in Resources */,
-				30A9C2D51E0356C4001EA55B /* croppedBG2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
