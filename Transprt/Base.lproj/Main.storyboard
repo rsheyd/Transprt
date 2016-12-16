@@ -202,6 +202,7 @@
                     </view>
                     <connections>
                         <outlet property="cancelTransBtn" destination="bd7-JY-urg" id="vLN-Lo-Gtr"/>
+                        <outlet property="map" destination="KAb-qi-9la" id="FyR-V0-QVF"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueToLogin" id="cg9-gu-5QG"/>
                     </connections>
                 </viewController>
