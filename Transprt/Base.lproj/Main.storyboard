@@ -41,37 +41,17 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ps7-SA-rXB">
-                                <rect key="frame" x="273" y="110" width="55" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="3jI-Av-Eq9"/>
-                                    <constraint firstAttribute="width" constant="55" id="MUh-Mt-e2q"/>
-                                </constraints>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleColor" red="0.31764706970000001" green="0.59215688710000003" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="transprt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDf-sT-Zbp">
-                                <rect key="frame" x="85" y="37" width="205" height="65"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="205" id="Agc-gz-vra"/>
-                                    <constraint firstAttribute="height" constant="65" id="wHQ-IM-3US"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="45"/>
-                                <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="2" height="2"/>
-                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lFw-Vz-RSO">
                                 <rect key="frame" x="163" y="266" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="l90-pv-LFM"/>
                                     <constraint firstAttribute="width" constant="49" id="nfC-eU-DSy"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="riderSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="6Td-7g-Qbi"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVD-6w-CC5">
                                 <rect key="frame" x="230" y="271" width="51" height="21"/>
@@ -91,24 +71,52 @@
                                     <constraint firstAttribute="height" constant="21" id="C1J-jm-LNA"/>
                                     <constraint firstAttribute="width" constant="46" id="OFq-6Z-I6b"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.73725491759999995" green="0.93333333730000001" blue="0.69019609689999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Om9-mc-qtd">
-                                <rect key="frame" x="132" y="300" width="111" height="55"/>
+                                <rect key="frame" x="87" y="300" width="200" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="WYu-ZN-b8T"/>
-                                    <constraint firstAttribute="width" constant="111" id="Zpm-fj-LOo"/>
+                                    <constraint firstAttribute="width" constant="200" id="Zpm-fj-LOo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Log In">
                                     <color key="titleColor" red="0.31764706969261169" green="0.59215688705444336" blue="0.91372549533843994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="556-hT-QIg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="transprt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDf-sT-Zbp">
+                                <rect key="frame" x="85" y="49" width="205" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="Agc-gz-vra"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="45"/>
+                                <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ps7-SA-rXB">
+                                <rect key="frame" x="163" y="110" width="165" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3jI-Av-Eq9"/>
+                                    <constraint firstAttribute="width" constant="165" id="MUh-Mt-e2q"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Switch to Sign Up Mode">
+                                    <color key="titleColor" red="0.31764706970000001" green="0.59215688710000003" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="khd-LH-Qjq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -126,7 +134,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kbp-Go-bhk" secondAttribute="bottom" id="RYv-sj-qIL"/>
                             <constraint firstItem="u6O-W9-zkH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WJs-a9-kma"/>
                             <constraint firstItem="DDf-sT-Zbp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z06-sD-jLd"/>
-                            <constraint firstItem="DDf-sT-Zbp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="co5-kJ-1fr"/>
+                            <constraint firstItem="DDf-sT-Zbp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="co5-kJ-1fr"/>
                             <constraint firstItem="dy4-iE-gI8" firstAttribute="centerX" secondItem="Om9-mc-qtd" secondAttribute="centerX" id="di1-pk-t3g"/>
                             <constraint firstItem="u6O-W9-zkH" firstAttribute="top" secondItem="ps7-SA-rXB" secondAttribute="bottom" constant="8" id="fnM-og-Bh5"/>
                             <constraint firstItem="HVD-6w-CC5" firstAttribute="leading" secondItem="lFw-Vz-RSO" secondAttribute="trailing" constant="18" id="iSR-FW-QiK"/>
@@ -136,6 +144,15 @@
                             <constraint firstItem="dy4-iE-gI8" firstAttribute="centerX" secondItem="DDf-sT-Zbp" secondAttribute="centerX" id="ryf-go-LFq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="driverLbl" destination="HVD-6w-CC5" id="Q7C-uy-ccL"/>
+                        <outlet property="emailFld" destination="u6O-W9-zkH" id="XFL-vZ-cLl"/>
+                        <outlet property="isDriverSwitch" destination="lFw-Vz-RSO" id="ztQ-Y2-Zgm"/>
+                        <outlet property="loginBtn" destination="Om9-mc-qtd" id="vLv-ez-hFe"/>
+                        <outlet property="passFld" destination="dy4-iE-gI8" id="CTK-EB-buB"/>
+                        <outlet property="riderLbl" destination="lWl-U8-ZSU" id="VU7-N6-mzP"/>
+                        <outlet property="signUpBtn" destination="ps7-SA-rXB" id="eQd-H3-HO0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
