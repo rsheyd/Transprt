@@ -49,7 +49,7 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // shows rider's current location with a pin
         if let location = manager.location?.coordinate {
-            let userLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+            userLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
             let region = MKCoordinateRegion(center: userLocation, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
             self.map.setRegion(region, animated: true)
             
