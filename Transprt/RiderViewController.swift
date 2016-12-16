@@ -13,6 +13,7 @@ import MapKit
 class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     var locationManager = CLLocationManager()
+    var userLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     
     @IBOutlet weak var cancelTransBtn: UIButton!
     @IBOutlet weak var map: MKMapView!
@@ -21,19 +22,40 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         PFUser.logOutInBackground()
         self.performSegue(withIdentifier: "segueToLogin", sender: nil)
     }
+    
     @IBAction func cancelTransBtnPressed(_ sender: Any) {
-
+        if userLocation.latitude != 0 && userLocation.longitude != 0 {
+            let riderRequest = PFObject(className: "RiderRequest")
+            riderRequest["username"] = PFUser.current()?.username
+            riderRequest["location"] = PFGeoPoint(latitude: userLocation.latitude, longitude: userLocation.longitude)
+            riderRequest.saveInBackground(block: { (success, error) in
+                if success {
+                    print("tansprt called.")
+                } else {
+                    self.displayAlert(title: "Error.", message: "Could not call transprt. Please try again.")
+                }
+            })
+        } else {
+            displayAlert(title: "Could not call transprt.", message: "Cannot detect your location.")
+        }
+    }
+    
+    func displayAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // shows rider's current location with a pin
         if let location = manager.location?.coordinate {
-            let center = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            let userLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+            let region = MKCoordinateRegion(center: userLocation, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
             self.map.setRegion(region, animated: true)
             
             self.map.removeAnnotations(self.map.annotations)
             let annotation = MKPointAnnotation()
-            annotation.coordinate = center
+            annotation.coordinate = userLocation
             annotation.title = "Your Location"
             self.map.addAnnotation(annotation)
         }
