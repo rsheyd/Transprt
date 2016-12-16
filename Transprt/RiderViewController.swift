@@ -33,7 +33,8 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             query.findObjectsInBackground(block: { (objects, error) in
                 if let riderRequests = objects {
                     for object in riderRequests {
-                            object.deleteInBackground()
+                        object.deleteInBackground()
+                        print("transprt cancelled")
                     }
                 }
             })
@@ -77,6 +78,18 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             annotation.coordinate = userLocation
             annotation.title = "Your Location"
             self.map.addAnnotation(annotation)
+            
+            // update user location in Parse
+            let query = PFQuery(className: "RiderRequest")
+            query.whereKey("username", equalTo: (PFUser.current()?.username)!)
+            query.findObjectsInBackground(block: { (objects, error) in
+                if let riderRequests = objects {
+                    for object in riderRequests {
+                        object["location"] = PFGeoPoint(latitude: self.userLocation.latitude, longitude: self.userLocation.longitude)
+                        object.saveInBackground()
+                    }
+                }
+            })
         }
     }
     
@@ -89,6 +102,19 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        // check for active request
+        callTransBtn.isHidden = true
+        
+        let query = PFQuery(className: "RiderRequest")
+        query.whereKey("username", equalTo: (PFUser.current()?.username)!)
+        query.findObjectsInBackground(block: { (objects, error) in
+            if let riderRequests = objects {
+                self.riderRequestActive = true
+                self.callTransBtn.setTitle("Cancel transprt", for: [])
+            }
+            self.callTransBtn.isHidden = false
+        })
     }
 
     override func didReceiveMemoryWarning() {
