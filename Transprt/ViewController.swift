@@ -23,13 +23,19 @@ class ViewController: UIViewController {
     
     @IBAction func signUpBtnPressed(_ sender: Any) {
         if signupMode {
+            signupMode = false
             loginBtn.setTitle("Log In", for: [])
             signUpBtn.setTitle("Switch to Sign Up Mode", for: [])
-            signupMode = false
+            driverLbl.isHidden = true
+            riderLbl.isHidden = true
+            isDriverSwitch.isHidden = true
         } else {
+            signupMode = true
             loginBtn.setTitle("Sign Up", for: [])
             signUpBtn.setTitle("Switch to Log In Mode", for: [])
-            signupMode = true
+            driverLbl.isHidden = false
+            riderLbl.isHidden = false
+            isDriverSwitch.isHidden = false
         }
     }
     
@@ -73,6 +79,7 @@ class ViewController: UIViewController {
                     self.displayAlert(title: "Log in failed.", message: displayedError)
                 } else {
                     print("Log in successful.")
+                    self.performSegue(withIdentifier: "segueToRider", sender: nil)
                 }
                 
             })

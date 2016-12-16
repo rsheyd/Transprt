@@ -43,66 +43,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lFw-Vz-RSO">
-                                <rect key="frame" x="163" y="266" width="51" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="l90-pv-LFM"/>
-                                    <constraint firstAttribute="width" constant="49" id="nfC-eU-DSy"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="riderSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="6Td-7g-Qbi"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVD-6w-CC5">
-                                <rect key="frame" x="230" y="271" width="51" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="LyV-rz-Vsr"/>
-                                    <constraint firstAttribute="width" constant="51" id="bbX-xd-OVO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rider" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWl-U8-ZSU">
-                                <rect key="frame" x="99" y="271" width="46" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="C1J-jm-LNA"/>
-                                    <constraint firstAttribute="width" constant="46" id="OFq-6Z-I6b"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.73725491759999995" green="0.93333333730000001" blue="0.69019609689999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Om9-mc-qtd">
-                                <rect key="frame" x="87" y="300" width="200" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="WYu-ZN-b8T"/>
-                                    <constraint firstAttribute="width" constant="200" id="Zpm-fj-LOo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Log In">
-                                    <color key="titleColor" red="0.31764706969261169" green="0.59215688705444336" blue="0.91372549533843994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="556-hT-QIg"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="transprt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDf-sT-Zbp">
-                                <rect key="frame" x="85" y="49" width="205" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="205" id="Agc-gz-vra"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="45"/>
-                                <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="2" height="2"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ps7-SA-rXB">
                                 <rect key="frame" x="163" y="110" width="165" height="30"/>
                                 <constraints>
@@ -118,17 +58,77 @@
                                     <action selector="signUpBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="khd-LH-Qjq"/>
                                 </connections>
                             </button>
+                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lFw-Vz-RSO">
+                                <rect key="frame" x="160" y="246" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="l90-pv-LFM"/>
+                                    <constraint firstAttribute="width" constant="49" id="nfC-eU-DSy"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="riderSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="6Td-7g-Qbi"/>
+                                </connections>
+                            </switch>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVD-6w-CC5">
+                                <rect key="frame" x="227" y="251" width="51" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="LyV-rz-Vsr"/>
+                                    <constraint firstAttribute="width" constant="51" id="bbX-xd-OVO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rider" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWl-U8-ZSU">
+                                <rect key="frame" x="96" y="251" width="46" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="C1J-jm-LNA"/>
+                                    <constraint firstAttribute="width" constant="46" id="OFq-6Z-I6b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.73725491759999995" green="0.93333333730000001" blue="0.69019609689999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="transprt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDf-sT-Zbp">
+                                <rect key="frame" x="85" y="49" width="205" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="Agc-gz-vra"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="45"/>
+                                <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Om9-mc-qtd">
+                                <rect key="frame" x="87" y="285" width="200" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="WYu-ZN-b8T"/>
+                                    <constraint firstAttribute="width" constant="200" id="Zpm-fj-LOo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" red="0.31764706969261169" green="0.59215688705444336" blue="0.91372549533843994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="556-hT-QIg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lFw-Vz-RSO" firstAttribute="leading" secondItem="lWl-U8-ZSU" secondAttribute="trailing" constant="18" id="0oW-g0-COS"/>
                             <constraint firstItem="kbp-Go-bhk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4uH-xt-2je"/>
                             <constraint firstItem="dy4-iE-gI8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9SU-hF-ODC"/>
-                            <constraint firstItem="lWl-U8-ZSU" firstAttribute="top" secondItem="dy4-iE-gI8" secondAttribute="bottom" constant="46" id="H2g-s3-deB"/>
+                            <constraint firstItem="lWl-U8-ZSU" firstAttribute="top" secondItem="dy4-iE-gI8" secondAttribute="bottom" constant="26" id="H2g-s3-deB"/>
                             <constraint firstItem="dy4-iE-gI8" firstAttribute="trailing" secondItem="ps7-SA-rXB" secondAttribute="trailing" id="Jfz-7t-S1Y"/>
-                            <constraint firstItem="lFw-Vz-RSO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L2B-Eh-BW4"/>
-                            <constraint firstItem="HVD-6w-CC5" firstAttribute="top" secondItem="dy4-iE-gI8" secondAttribute="bottom" constant="46" id="M6T-lk-Qkx"/>
-                            <constraint firstItem="lFw-Vz-RSO" firstAttribute="top" secondItem="dy4-iE-gI8" secondAttribute="bottom" constant="41" id="OyG-KR-xlh"/>
+                            <constraint firstItem="lFw-Vz-RSO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-3" id="L2B-Eh-BW4"/>
+                            <constraint firstItem="HVD-6w-CC5" firstAttribute="top" secondItem="dy4-iE-gI8" secondAttribute="bottom" constant="26" id="M6T-lk-Qkx"/>
+                            <constraint firstItem="lFw-Vz-RSO" firstAttribute="top" secondItem="dy4-iE-gI8" secondAttribute="bottom" constant="21" id="OyG-KR-xlh"/>
                             <constraint firstItem="dy4-iE-gI8" firstAttribute="top" secondItem="u6O-W9-zkH" secondAttribute="bottom" constant="17" id="Q6D-v5-nVJ"/>
                             <constraint firstAttribute="trailing" secondItem="kbp-Go-bhk" secondAttribute="trailing" id="R9h-aX-xbd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kbp-Go-bhk" secondAttribute="bottom" id="RYv-sj-qIL"/>
@@ -140,7 +140,7 @@
                             <constraint firstItem="HVD-6w-CC5" firstAttribute="leading" secondItem="lFw-Vz-RSO" secondAttribute="trailing" constant="18" id="iSR-FW-QiK"/>
                             <constraint firstItem="dy4-iE-gI8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="195" id="qMH-sy-A6D"/>
                             <constraint firstItem="kbp-Go-bhk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qSW-3j-yJS"/>
-                            <constraint firstItem="Om9-mc-qtd" firstAttribute="top" secondItem="dy4-iE-gI8" secondAttribute="bottom" constant="75" id="qng-h1-Atd"/>
+                            <constraint firstItem="Om9-mc-qtd" firstAttribute="top" secondItem="dy4-iE-gI8" secondAttribute="bottom" constant="60" id="qng-h1-Atd"/>
                             <constraint firstItem="dy4-iE-gI8" firstAttribute="centerX" secondItem="DDf-sT-Zbp" secondAttribute="centerX" id="ryf-go-LFq"/>
                         </constraints>
                     </view>
@@ -152,11 +152,60 @@
                         <outlet property="passFld" destination="dy4-iE-gI8" id="CTK-EB-buB"/>
                         <outlet property="riderLbl" destination="lWl-U8-ZSU" id="VU7-N6-mzP"/>
                         <outlet property="signUpBtn" destination="ps7-SA-rXB" id="eQd-H3-HO0"/>
+                        <segue destination="W7f-Id-PfT" kind="show" identifier="segueToRider" id="ipg-Kx-FzO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--Rider View Controller-->
+        <scene sceneID="YfM-7e-HU1">
+            <objects>
+                <viewController id="W7f-Id-PfT" customClass="RiderViewController" customModule="Transprt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tyv-dO-ece"/>
+                        <viewControllerLayoutGuide type="bottom" id="4gU-Da-Rvf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dFr-iO-Y3A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h2G-LB-DKM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="transprt" id="fjj-jV-pCL">
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="DVk-qQ-V2O">
+                                            <connections>
+                                                <action selector="logoutBtnPressed:" destination="W7f-Id-PfT" id="ObN-4b-fim"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KAb-qi-9la">
+                                <rect key="frame" x="0.0" y="64" width="375" height="340"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd7-JY-urg">
+                                <rect key="frame" x="134" y="412" width="107" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel transprt"/>
+                                <connections>
+                                    <action selector="cancelTransBtnPressed:" destination="W7f-Id-PfT" eventType="touchUpInside" id="rgu-Pd-ETP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelTransBtn" destination="bd7-JY-urg" id="vLN-Lo-Gtr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qBt-tm-0Lc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="869.60000000000002" y="123.68815592203899"/>
         </scene>
     </scenes>
     <resources>
