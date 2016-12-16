@@ -1,5 +1,5 @@
 //
-//  RiderViewController.swift
+//  DriverViewController.swift
 //  Transprt
 //
 //  Created by Roman Sheydvasser on 12/16/16.
@@ -9,15 +9,12 @@
 import UIKit
 import Parse
 
-class RiderViewController: UIViewController {
+class DriverViewController: UIViewController {
 
-    @IBOutlet weak var cancelTransBtn: UIButton!
-    
-    @IBAction func logoutBtnPressed(_ sender: Any) {
-        PFUser.logOutInBackground()
-        self.performSegue(withIdentifier: "segueToLogin", sender: nil)
-    }
-    @IBAction func cancelTransBtnPressed(_ sender: Any) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToLogin" {
+            PFUser.logOutInBackground()
+        }
     }
     
     override func viewDidLoad() {

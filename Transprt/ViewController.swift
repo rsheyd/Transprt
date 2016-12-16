@@ -46,6 +46,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
+        
         // sign up mode
         if signupMode {
             if emailFld.text == "" || passFld.text == "" {
@@ -65,9 +66,17 @@ class ViewController: UIViewController {
                         self.displayAlert(title: "Sign up failed.", message: displayedError)
                     } else {
                         print("Sign up successful.")
+                        if let isDriver = PFUser.current()?["isDriver"] as? Bool {
+                            if isDriver {
+                                self.performSegue(withIdentifier: "segueToDriver", sender: self)
+                            } else {
+                                self.performSegue(withIdentifier: "segueToRider", sender: self)
+                            }
+                        }
                     }
                 })
             }
+            
         // log in mode
         } else {
             PFUser.logInWithUsername(inBackground: emailFld.text!, password: passFld.text!, block: { (user, error) in
@@ -79,7 +88,13 @@ class ViewController: UIViewController {
                     self.displayAlert(title: "Log in failed.", message: displayedError)
                 } else {
                     print("Log in successful.")
-                    self.performSegue(withIdentifier: "segueToRider", sender: nil)
+                    if let isDriver = PFUser.current()?["isDriver"] as? Bool {
+                        if isDriver {
+                            self.performSegue(withIdentifier: "segueToDriver", sender: self)
+                        } else {
+                            self.performSegue(withIdentifier: "segueToRider", sender: self)
+                        }
+                    }
                 }
                 
             })
@@ -92,6 +107,15 @@ class ViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if let isDriver = PFUser.current()?["isDriver"] as? Bool {
+            if isDriver {
+                
+            } else {
+                self.performSegue(withIdentifier: "segueToRider", sender: self)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
