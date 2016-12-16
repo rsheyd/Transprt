@@ -14,8 +14,9 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
     var locationManager = CLLocationManager()
     var userLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    var riderRequestActive = false
     
-    @IBOutlet weak var cancelTransBtn: UIButton!
+    @IBOutlet weak var callTransBtn: UIButton!
     @IBOutlet weak var map: MKMapView!
     
     @IBAction func logoutBtnPressed(_ sender: Any) {
@@ -23,20 +24,25 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         self.performSegue(withIdentifier: "segueToLogin", sender: nil)
     }
     
-    @IBAction func cancelTransBtnPressed(_ sender: Any) {
-        if userLocation.latitude != 0 && userLocation.longitude != 0 {
-            let riderRequest = PFObject(className: "RiderRequest")
-            riderRequest["username"] = PFUser.current()?.username
-            riderRequest["location"] = PFGeoPoint(latitude: userLocation.latitude, longitude: userLocation.longitude)
-            riderRequest.saveInBackground(block: { (success, error) in
-                if success {
-                    print("tansprt called.")
-                } else {
-                    self.displayAlert(title: "Error.", message: "Could not call transprt. Please try again.")
-                }
-            })
+    @IBAction func callTransBtnPressed(_ sender: Any) {
+        if riderRequestActive {
+            self.callTransBtn.setTitle("Call a transprt", for: [])
         } else {
-            displayAlert(title: "Could not call transprt.", message: "Cannot detect your location.")
+            if userLocation.latitude != 0 && userLocation.longitude != 0 {
+                let riderRequest = PFObject(className: "RiderRequest")
+                riderRequest["username"] = PFUser.current()?.username
+                riderRequest["location"] = PFGeoPoint(latitude: userLocation.latitude, longitude: userLocation.longitude)
+                riderRequest.saveInBackground(block: { (success, error) in
+                    if success {
+                        print("tansprt called.")
+                        self.callTransBtn.setTitle("Cancel transprt", for: [])
+                    } else {
+                        self.displayAlert(title: "Error.", message: "Could not call transprt. Please try again.")
+                    }
+                })
+            } else {
+                displayAlert(title: "Could not call transprt.", message: "Cannot detect your location.")
+            }
         }
     }
     

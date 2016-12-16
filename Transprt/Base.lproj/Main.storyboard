@@ -190,18 +190,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd7-JY-urg">
-                                <rect key="frame" x="134" y="412" width="107" height="30"/>
+                                <rect key="frame" x="139" y="412" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel transprt"/>
+                                <state key="normal" title="Call a transprt"/>
                                 <connections>
-                                    <action selector="cancelTransBtnPressed:" destination="W7f-Id-PfT" eventType="touchUpInside" id="rgu-Pd-ETP"/>
+                                    <action selector="callTransBtnPressed:" destination="W7f-Id-PfT" eventType="touchUpInside" id="5Ft-uR-YZb"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="cancelTransBtn" destination="bd7-JY-urg" id="vLN-Lo-Gtr"/>
                         <outlet property="map" destination="KAb-qi-9la" id="FyR-V0-QVF"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueToLogin" id="cg9-gu-5QG"/>
                     </connections>
@@ -253,6 +252,6 @@
         <image name="croppedBG3.jpg" width="2500" height="2932"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dWG-Bf-QMl"/>
+        <segue reference="cg9-gu-5QG"/>
     </inferredMetricsTieBreakers>
 </document>
