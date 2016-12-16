@@ -172,9 +172,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h2G-LB-DKM">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2G-LB-DKM">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="transprt" id="fjj-jV-pCL">
                                         <barButtonItem key="leftBarButtonItem" title="Logout" id="DVk-qQ-V2O">
@@ -185,13 +184,17 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KAb-qi-9la">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KAb-qi-9la">
                                 <rect key="frame" x="0.0" y="64" width="375" height="340"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="340" id="pfv-gJ-6SH"/>
+                                </constraints>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd7-JY-urg">
-                                <rect key="frame" x="139" y="412" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd7-JY-urg">
+                                <rect key="frame" x="122.5" y="412" width="130" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="3ZY-TH-Frz"/>
+                                </constraints>
                                 <state key="normal" title="Call a transprt"/>
                                 <connections>
                                     <action selector="callTransBtnPressed:" destination="W7f-Id-PfT" eventType="touchUpInside" id="5Ft-uR-YZb"/>
@@ -199,8 +202,19 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KAb-qi-9la" firstAttribute="leading" secondItem="dFr-iO-Y3A" secondAttribute="leading" id="5WN-a9-nd9"/>
+                            <constraint firstItem="bd7-JY-urg" firstAttribute="centerX" secondItem="dFr-iO-Y3A" secondAttribute="centerX" id="E6m-Uk-y4d"/>
+                            <constraint firstItem="KAb-qi-9la" firstAttribute="top" secondItem="h2G-LB-DKM" secondAttribute="bottom" id="IIV-j3-u9w"/>
+                            <constraint firstItem="h2G-LB-DKM" firstAttribute="top" secondItem="tyv-dO-ece" secondAttribute="bottom" id="OGQ-DH-CnR"/>
+                            <constraint firstAttribute="trailing" secondItem="KAb-qi-9la" secondAttribute="trailing" id="S2d-qK-7IM"/>
+                            <constraint firstItem="h2G-LB-DKM" firstAttribute="leading" secondItem="dFr-iO-Y3A" secondAttribute="leading" id="ZSc-Hr-2Py"/>
+                            <constraint firstAttribute="trailing" secondItem="h2G-LB-DKM" secondAttribute="trailing" id="kBW-Uf-scF"/>
+                            <constraint firstItem="bd7-JY-urg" firstAttribute="top" secondItem="KAb-qi-9la" secondAttribute="bottom" constant="8" id="tut-uu-dGv"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="callTransBtn" destination="bd7-JY-urg" id="voX-IW-ybn"/>
                         <outlet property="map" destination="KAb-qi-9la" id="FyR-V0-QVF"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueToLogin" id="cg9-gu-5QG"/>
                     </connections>

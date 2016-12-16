@@ -26,8 +26,22 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     @IBAction func callTransBtnPressed(_ sender: Any) {
         if riderRequestActive {
-            self.callTransBtn.setTitle("Call a transprt", for: [])
+            riderRequestActive = false
+            callTransBtn.setTitle("Call a transprt", for: [])
+            let query = PFQuery(className: "RiderRequest")
+            query.whereKey("username", equalTo: (PFUser.current()?.username)!)
+            query.findObjectsInBackground(block: { (objects, error) in
+                if let riderRequests = objects {
+                    for object in riderRequests {
+                            object.deleteInBackground()
+                    }
+                }
+            })
         } else {
+            riderRequestActive = true
+            
+            callTransBtn.setTitle("Cancel transprt", for: [])
+            
             if userLocation.latitude != 0 && userLocation.longitude != 0 {
                 let riderRequest = PFObject(className: "RiderRequest")
                 riderRequest["username"] = PFUser.current()?.username
@@ -35,7 +49,6 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                 riderRequest.saveInBackground(block: { (success, error) in
                     if success {
                         print("tansprt called.")
-                        self.callTransBtn.setTitle("Cancel transprt", for: [])
                     } else {
                         self.displayAlert(title: "Error.", message: "Could not call transprt. Please try again.")
                     }
