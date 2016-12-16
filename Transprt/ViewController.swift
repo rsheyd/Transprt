@@ -110,7 +110,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if let isDriver = PFUser.current()?["isDriver"] as? Bool {
             if isDriver {
-                
+                self.performSegue(withIdentifier: "segueToDriver", sender: self)
             } else {
                 self.performSegue(withIdentifier: "segueToRider", sender: self)
             }
