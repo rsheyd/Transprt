@@ -9,12 +9,41 @@
 import UIKit
 import Parse
 
-class DriverViewController: UITableViewController {
+class DriverViewController: UITableViewController, CLLocationManagerDelegate {
+    
+    var locationManager = CLLocationManager()
+    var requestUsernames = [String]()
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToLogin" {
             PFUser.logOut()
             self.navigationController?.navigationBar.isHidden = true
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        // gets rider requests based on drider's current location
+        if let location = manager.location?.coordinate {
+            let query = PFQuery(className: "RiderRequest")
+            
+            print(location)
+            
+            query.whereKey("location", nearGeoPoint: PFGeoPoint(latitude: location.latitude, longitude: location.longitude))
+            query.limit = 10
+            query.findObjectsInBackground(block: {(objects, error) in
+                if let riderRequests = objects {
+                    self.requestUsernames.removeAll()
+                    for riderRequest in riderRequests {
+                        if let username = riderRequest["username"] as? String {
+                            self.requestUsernames.append(username)
+                        }
+                    }
+                    self.tableView.reloadData()
+                } else {
+                    print("No results")
+                }
+            })
         }
     }
     
@@ -26,6 +55,12 @@ class DriverViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +77,7 @@ class DriverViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return requestUsernames.count
     }
 
     
@@ -51,7 +86,7 @@ class DriverViewController: UITableViewController {
 
         // Configure the cell...
 
-        cell.textLabel?.text = "cell"
+        cell.textLabel?.text = requestUsernames[indexPath.row]
         
         return cell
     }
