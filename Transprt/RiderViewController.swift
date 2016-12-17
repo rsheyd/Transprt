@@ -21,6 +21,7 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     @IBAction func logoutBtnPressed(_ sender: Any) {
         PFUser.logOutInBackground()
+        locationManager.stopUpdatingLocation()
         self.performSegue(withIdentifier: "segueToLogin", sender: nil)
     }
     
