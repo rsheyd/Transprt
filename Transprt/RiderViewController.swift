@@ -110,8 +110,8 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         let query = PFQuery(className: "RiderRequest")
         query.whereKey("username", equalTo: (PFUser.current()?.username)!)
         query.findObjectsInBackground(block: { (objects, error) in
-            if let riderRequests = objects {
-                if riderRequests.count > 0 {
+            if let objects = objects {
+                if objects.count > 0 {
                     self.riderRequestActive = true
                     self.callTransBtn.setTitle("Cancel transprt", for: [])
                 }
