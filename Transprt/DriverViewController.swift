@@ -36,9 +36,27 @@ class DriverViewController: UITableViewController, CLLocationManagerDelegate {
         
         // gets rider requests based on drider's current location
         if let location = manager.location?.coordinate {
-            let query = PFQuery(className: "RiderRequest")
             
             driverLocation = location
+            
+            let driverLocationQuery = PFQuery(className: "DriverLocation")
+            driverLocationQuery.whereKey("username", equalTo: PFUser.current()?.username!)
+            driverLocationQuery.findObjectsInBackground(block: { (objects, error) in
+                if let driverPFLocations = objects {
+                    for driverPFLocation in driverPFLocations {
+                        driverPFLocation["location"] = PFGeoPoint(latitude: self.driverLocation.latitude, longitude: self.driverLocation.longitude)
+                        driverPFLocation.deleteInBackground()
+                    }
+                }
+
+                let driverPFLocation = PFObject(className: "DriverLocation")
+                driverPFLocation["username"] = PFUser.current()?.username
+                driverPFLocation["location"] = PFGeoPoint(latitude: self.driverLocation.latitude, longitude: self.driverLocation.longitude)
+                driverPFLocation.saveInBackground()
+            
+            })
+        
+            let query = PFQuery(className: "RiderRequest")
             
             query.whereKey("location", nearGeoPoint: PFGeoPoint(latitude: location.latitude, longitude: location.longitude))
 
