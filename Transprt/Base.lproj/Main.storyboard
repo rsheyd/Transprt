@@ -51,7 +51,7 @@
                                 </constraints>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Switch to Sign Up Mode">
-                                    <color key="titleColor" red="0.31764706970000001" green="0.59215688710000003" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.31764706969261169" green="0.59215688705444336" blue="0.91372549533843994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -93,7 +93,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="transprt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDf-sT-Zbp">
-                                <rect key="frame" x="85" y="93" width="205" height="45"/>
+                                <rect key="frame" x="85" y="49" width="205" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="205" id="Agc-gz-vra"/>
                                 </constraints>
@@ -172,6 +172,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plainBG.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6P4-SJ-ofH">
+                                <rect key="frame" x="0.0" y="505" width="375" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="6em-xA-WjI"/>
+                                </constraints>
+                            </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2G-LB-DKM">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
@@ -184,18 +190,42 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KAb-qi-9la">
-                                <rect key="frame" x="0.0" y="64" width="375" height="340"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your driver's name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubT-9i-8FH">
+                                <rect key="frame" x="36" y="548" width="302" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="340" id="pfv-gJ-6SH"/>
+                                    <constraint firstAttribute="width" constant="302" id="C0P-iq-sv0"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KAb-qi-9la">
+                                <rect key="frame" x="0.0" y="64" width="375" height="433"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd7-JY-urg">
-                                <rect key="frame" x="16" y="412" width="343" height="30"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your driver is currently ___km away." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TC0-9z-4xK">
+                                <rect key="frame" x="36" y="577" width="302" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="302" id="Jae-wb-hA5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bd7-JY-urg">
+                                <rect key="frame" x="16" y="505" width="343" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="3ZY-TH-Frz"/>
                                 </constraints>
-                                <state key="normal" title="Call a transprt"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Call a transprt">
+                                    <color key="titleColor" red="0.31764706970000001" green="0.59215688710000003" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="callTransBtnPressed:" destination="W7f-Id-PfT" eventType="touchUpInside" id="5Ft-uR-YZb"/>
                                 </connections>
@@ -203,18 +233,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KAb-qi-9la" firstAttribute="leading" secondItem="dFr-iO-Y3A" secondAttribute="leading" id="5WN-a9-nd9"/>
-                            <constraint firstItem="bd7-JY-urg" firstAttribute="centerX" secondItem="dFr-iO-Y3A" secondAttribute="centerX" id="E6m-Uk-y4d"/>
-                            <constraint firstItem="KAb-qi-9la" firstAttribute="top" secondItem="h2G-LB-DKM" secondAttribute="bottom" id="IIV-j3-u9w"/>
-                            <constraint firstItem="h2G-LB-DKM" firstAttribute="top" secondItem="tyv-dO-ece" secondAttribute="bottom" id="OGQ-DH-CnR"/>
-                            <constraint firstAttribute="trailing" secondItem="KAb-qi-9la" secondAttribute="trailing" id="S2d-qK-7IM"/>
-                            <constraint firstItem="h2G-LB-DKM" firstAttribute="leading" secondItem="dFr-iO-Y3A" secondAttribute="leading" id="ZSc-Hr-2Py"/>
-                            <constraint firstAttribute="trailing" secondItem="h2G-LB-DKM" secondAttribute="trailing" id="kBW-Uf-scF"/>
-                            <constraint firstItem="bd7-JY-urg" firstAttribute="top" secondItem="KAb-qi-9la" secondAttribute="bottom" constant="8" id="tut-uu-dGv"/>
+                            <constraint firstItem="ubT-9i-8FH" firstAttribute="top" secondItem="bd7-JY-urg" secondAttribute="bottom" constant="5" id="0cz-CS-MnQ"/>
+                            <constraint firstItem="TC0-9z-4xK" firstAttribute="centerX" secondItem="dFr-iO-Y3A" secondAttribute="centerX" constant="-0.5" id="1gn-7L-sGP"/>
+                            <constraint firstAttribute="trailing" secondItem="h2G-LB-DKM" secondAttribute="trailing" id="8HR-qR-obA"/>
+                            <constraint firstAttribute="bottom" secondItem="6P4-SJ-ofH" secondAttribute="bottom" id="D8J-uE-Flq"/>
+                            <constraint firstItem="bd7-JY-urg" firstAttribute="centerX" secondItem="dFr-iO-Y3A" secondAttribute="centerX" id="Ehe-PA-DzG"/>
+                            <constraint firstItem="TC0-9z-4xK" firstAttribute="top" secondItem="ubT-9i-8FH" secondAttribute="bottom" constant="8" id="Mwb-QO-NGj"/>
+                            <constraint firstItem="bd7-JY-urg" firstAttribute="top" secondItem="KAb-qi-9la" secondAttribute="bottom" constant="8" id="SE7-Ho-BS3"/>
+                            <constraint firstAttribute="trailing" secondItem="6P4-SJ-ofH" secondAttribute="trailing" id="UOp-Rh-dPo"/>
+                            <constraint firstItem="h2G-LB-DKM" firstAttribute="top" secondItem="tyv-dO-ece" secondAttribute="bottom" id="eU3-6k-C7Z"/>
+                            <constraint firstItem="KAb-qi-9la" firstAttribute="top" secondItem="h2G-LB-DKM" secondAttribute="bottom" id="h5H-8V-QgF"/>
+                            <constraint firstItem="ubT-9i-8FH" firstAttribute="centerX" secondItem="dFr-iO-Y3A" secondAttribute="centerX" constant="-0.5" id="iKe-B5-6qo"/>
+                            <constraint firstItem="6P4-SJ-ofH" firstAttribute="leading" secondItem="dFr-iO-Y3A" secondAttribute="leading" id="kPp-SQ-ZQ1"/>
+                            <constraint firstItem="4gU-Da-Rvf" firstAttribute="top" secondItem="KAb-qi-9la" secondAttribute="bottom" constant="170" id="lcj-fB-1mN"/>
+                            <constraint firstItem="KAb-qi-9la" firstAttribute="leading" secondItem="dFr-iO-Y3A" secondAttribute="leading" id="qL4-at-Afq"/>
+                            <constraint firstAttribute="trailing" secondItem="KAb-qi-9la" secondAttribute="trailing" id="tEC-Q5-jU6"/>
+                            <constraint firstItem="h2G-LB-DKM" firstAttribute="leading" secondItem="dFr-iO-Y3A" secondAttribute="leading" id="wqf-c2-cCX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="callTransBtn" destination="bd7-JY-urg" id="voX-IW-ybn"/>
+                        <outlet property="driverDistanceLbl" destination="TC0-9z-4xK" id="tAD-nF-O6I"/>
+                        <outlet property="driverNameLbl" destination="ubT-9i-8FH" id="Yhr-fI-SP2"/>
                         <outlet property="map" destination="KAb-qi-9la" id="FyR-V0-QVF"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueToLogin" id="cg9-gu-5QG"/>
                     </connections>
@@ -273,20 +313,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IoA-Jj-2ff">
-                                <rect key="frame" x="0.0" y="64" width="375" height="364"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plainBG.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aDF-AX-2Jz">
+                                <rect key="frame" x="0.0" y="505" width="375" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="162" id="59E-pD-jG6"/>
+                                    <constraint firstAttribute="height" constant="162" id="eLD-SU-zbs"/>
+                                </constraints>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IoA-Jj-2ff">
+                                <rect key="frame" x="0.0" y="64" width="375" height="442"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWk-30-uz7">
-                                <rect key="frame" x="133" y="462" width="109" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Accept Request"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWk-30-uz7">
+                                <rect key="frame" x="112.5" y="514" width="150" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Accept Request">
+                                    <color key="titleColor" red="0.31764706970000001" green="0.59215688710000003" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="acceptRequestPressed:" destination="V6F-Wm-0Qa" eventType="touchUpInside" id="erm-B5-IE2"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IoA-Jj-2ff" firstAttribute="top" secondItem="iia-jz-0Ic" secondAttribute="bottom" id="4Tr-Si-66q"/>
+                            <constraint firstAttribute="bottom" secondItem="aDF-AX-2Jz" secondAttribute="bottom" id="EvI-yN-72E"/>
+                            <constraint firstItem="aDF-AX-2Jz" firstAttribute="leading" secondItem="XXe-5o-6Xf" secondAttribute="leading" id="Ini-Px-zwp"/>
+                            <constraint firstItem="IoA-Jj-2ff" firstAttribute="leading" secondItem="XXe-5o-6Xf" secondAttribute="leading" id="P5N-qO-am8"/>
+                            <constraint firstItem="gWk-30-uz7" firstAttribute="top" secondItem="IoA-Jj-2ff" secondAttribute="bottom" constant="8" id="P85-vj-9uJ"/>
+                            <constraint firstAttribute="trailing" secondItem="aDF-AX-2Jz" secondAttribute="trailing" id="YCR-lc-5RQ"/>
+                            <constraint firstItem="IUj-Tl-c4l" firstAttribute="top" secondItem="IoA-Jj-2ff" secondAttribute="bottom" constant="161" id="dPg-jo-gsL"/>
+                            <constraint firstAttribute="trailing" secondItem="IoA-Jj-2ff" secondAttribute="trailing" id="e9e-zT-ubv"/>
+                            <constraint firstItem="gWk-30-uz7" firstAttribute="centerX" secondItem="XXe-5o-6Xf" secondAttribute="centerX" id="eCs-dr-GB2"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="acceptRequest" destination="gWk-30-uz7" id="Z68-xa-6jr"/>
@@ -316,6 +377,7 @@
     </scenes>
     <resources>
         <image name="croppedBG3.jpg" width="2500" height="2932"/>
+        <image name="plainBG.jpg" width="2001" height="2001"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cg9-gu-5QG"/>

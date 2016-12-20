@@ -46,6 +46,8 @@ class RiderLocationViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        map.layer.borderWidth = 1
+        
         let region = MKCoordinateRegion(center: requestLocation, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         map.setRegion(region, animated: true)
         let annotation = MKPointAnnotation()

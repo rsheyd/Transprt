@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		304DDC991E04801F006B22D5 /* DriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DDC981E04801F006B22D5 /* DriverViewController.swift */; };
 		304DDC9B1E08FDD7006B22D5 /* RiderLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DDC9A1E08FDD7006B22D5 /* RiderLocationViewController.swift */; };
+		304DDC9D1E093868006B22D5 /* plainBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 304DDC9C1E093868006B22D5 /* plainBG.jpg */; };
 		306F8E731E03495E003867E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306F8E721E03495E003867E8 /* AppDelegate.swift */; };
 		306F8E751E03495E003867E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306F8E741E03495E003867E8 /* ViewController.swift */; };
 		306F8E781E03495E003867E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 306F8E761E03495E003867E8 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		304DDC981E04801F006B22D5 /* DriverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverViewController.swift; sourceTree = "<group>"; };
 		304DDC9A1E08FDD7006B22D5 /* RiderLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderLocationViewController.swift; sourceTree = "<group>"; };
+		304DDC9C1E093868006B22D5 /* plainBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plainBG.jpg; sourceTree = "<group>"; };
 		306F8E6F1E03495E003867E8 /* Transprt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transprt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		306F8E721E03495E003867E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		306F8E741E03495E003867E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				30A9C2D61E035C14001EA55B /* croppedBG3.jpg */,
+				304DDC9C1E093868006B22D5 /* plainBG.jpg */,
 				30A9C2D01E0354D4001EA55B /* attribution.txt */,
 			);
 			name = Media;
@@ -183,6 +186,7 @@
 				306F8E7A1E03495E003867E8 /* Assets.xcassets in Resources */,
 				30A9C2D11E0354D4001EA55B /* attribution.txt in Resources */,
 				306F8E781E03495E003867E8 /* Main.storyboard in Resources */,
+				304DDC9D1E093868006B22D5 /* plainBG.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

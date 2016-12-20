@@ -15,7 +15,10 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     var locationManager = CLLocationManager()
     var userLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     var riderRequestActive = false
+    var driverOnTheWay = false
     
+    @IBOutlet weak var driverNameLbl: UILabel!
+    @IBOutlet weak var driverDistanceLbl: UILabel!
     @IBOutlet weak var callTransBtn: UIButton!
     @IBOutlet weak var map: MKMapView!
     
@@ -29,13 +32,14 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         if riderRequestActive {
             riderRequestActive = false
             callTransBtn.setTitle("Call a transprt", for: [])
+            self.driverNameLbl.isHidden = true
+            self.driverDistanceLbl.isHidden = true
             let query = PFQuery(className: "RiderRequest")
             query.whereKey("username", equalTo: (PFUser.current()?.username)!)
             query.findObjectsInBackground(block: { (objects, error) in
                 if let riderRequests = objects {
                     for object in riderRequests {
                         object.deleteInBackground()
-                        print("transprt cancelled")
                     }
                 }
             })
@@ -43,6 +47,8 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             riderRequestActive = true
             
             callTransBtn.setTitle("Cancel transprt", for: [])
+            self.driverNameLbl.isHidden = false
+            self.driverNameLbl.text = "Requesting ride from local drivers..."
             
             if userLocation.latitude != 0 && userLocation.longitude != 0 {
                 let riderRequest = PFObject(className: "RiderRequest")
@@ -50,7 +56,6 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                 riderRequest["location"] = PFGeoPoint(latitude: userLocation.latitude, longitude: userLocation.longitude)
                 riderRequest.saveInBackground(block: { (success, error) in
                     if success {
-                        print("tansprt called.")
                     } else {
                         self.displayAlert(title: "Error.", message: "Could not call transprt. Please try again.")
                     }
@@ -71,14 +76,17 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         // shows rider's current location with a pin
         if let location = manager.location?.coordinate {
             userLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-            let region = MKCoordinateRegion(center: userLocation, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-            self.map.setRegion(region, animated: true)
             
-            self.map.removeAnnotations(self.map.annotations)
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = userLocation
-            annotation.title = "Your Location"
-            self.map.addAnnotation(annotation)
+            if driverOnTheWay == false {
+                let region = MKCoordinateRegion(center: userLocation, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                self.map.setRegion(region, animated: true)
+                
+                self.map.removeAnnotations(self.map.annotations)
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = userLocation
+                annotation.title = "Your Location"
+                self.map.addAnnotation(annotation)
+            }
             
             // update user location in Parse
             let query = PFQuery(className: "RiderRequest")
@@ -106,11 +114,32 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                                 if let driverLocations = objects {
                                     for driverLocationObject in driverLocations {
                                         if let driverLocation = driverLocationObject["location"] as? PFGeoPoint {
+                                            self.driverOnTheWay = true
+                                            self.driverDistanceLbl.isHidden = false
+                                            
+                                            self.driverNameLbl.text = "Your driver's name: \(driverUsername)"
+                                            
                                             let driverCLLocation = CLLocation(latitude: driverLocation.latitude, longitude: driverLocation.longitude)
                                             let riderCLLocation = CLLocation(latitude:self.userLocation.latitude, longitude: self.userLocation.longitude)
                                             let distance = driverCLLocation.distance(from: riderCLLocation) / 1000
                                             let roundedDistance = round(distance * 100) / 100
-                                            self.callTransBtn.setTitle("Driver is on his way, and is about \(roundedDistance)km away!", for: [])
+                                            self.driverDistanceLbl.text = "Your driver is currently \(roundedDistance)km away."
+                                            let latDelta = abs(driverLocation.latitude - self.userLocation.latitude) * 2 + 0.005
+                                            let lonDelta = abs(driverLocation.longitude - self.userLocation.longitude) * 2 + 0.005
+                                            let region = MKCoordinateRegion(center: self.userLocation, span: MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta))
+                                            self.map.setRegion(region, animated: true)
+                                            
+                                            self.map.removeAnnotations(self.map.annotations)
+                                            
+                                            let userAnnotation = MKPointAnnotation()
+                                            userAnnotation.coordinate = self.userLocation
+                                            userAnnotation.title = "Your location"
+                                            self.map.addAnnotation(userAnnotation)
+                                            
+                                            let driverAnnotation = MKPointAnnotation()
+                                            driverAnnotation.coordinate = CLLocationCoordinate2D(latitude: driverLocation.latitude, longitude: driverLocation.longitude)
+                                            driverAnnotation.title = "Your driver \(driverUsername)"
+                                            self.map.addAnnotation(driverAnnotation)
                                         }
                                     }
                                 }
@@ -134,6 +163,9 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         
         // check for active request
         callTransBtn.isHidden = true
+        driverDistanceLbl.isHidden = true
+        driverNameLbl.isHidden = true
+        map.layer.borderWidth = 1
         
         let query = PFQuery(className: "RiderRequest")
         query.whereKey("username", equalTo: (PFUser.current()?.username)!)
@@ -142,6 +174,8 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                 if objects.count > 0 {
                     self.riderRequestActive = true
                     self.callTransBtn.setTitle("Cancel transprt", for: [])
+                    self.driverNameLbl.isHidden = false
+                    self.driverNameLbl.text = "Requesting ride from local drivers..."
                 }
             }
             self.callTransBtn.isHidden = false
