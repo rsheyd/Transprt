@@ -93,7 +93,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="transprt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDf-sT-Zbp">
-                                <rect key="frame" x="85" y="49" width="205" height="45"/>
+                                <rect key="frame" x="85" y="93" width="205" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="205" id="Agc-gz-vra"/>
                                 </constraints>
@@ -239,6 +239,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="V6F-Wm-0Qa" kind="show" identifier="segueToRiderLocation" id="8Al-XQ-P9C"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -257,6 +260,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SmA-Vw-UxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1823" y="-556"/>
+        </scene>
+        <!--Rider Location View Controller-->
+        <scene sceneID="BCe-t6-OPh">
+            <objects>
+                <viewController id="V6F-Wm-0Qa" customClass="RiderLocationViewController" customModule="Transprt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iia-jz-0Ic"/>
+                        <viewControllerLayoutGuide type="bottom" id="IUj-Tl-c4l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XXe-5o-6Xf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IoA-Jj-2ff">
+                                <rect key="frame" x="0.0" y="64" width="375" height="364"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWk-30-uz7">
+                                <rect key="frame" x="133" y="462" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Accept Request"/>
+                                <connections>
+                                    <action selector="acceptRequestPressed:" destination="V6F-Wm-0Qa" eventType="touchUpInside" id="erm-B5-IE2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="acceptRequest" destination="gWk-30-uz7" id="Z68-xa-6jr"/>
+                        <outlet property="map" destination="IoA-Jj-2ff" id="W1H-l1-P3H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMB-UF-n1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2660" y="-556.37181409295351"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fEJ-Tm-DKN">
