@@ -92,6 +92,34 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                 }
             })
         }
+        
+        if riderRequestActive == true {
+            let query = PFQuery(className: "RiderRequest")
+            query.whereKey("username", equalTo: (PFUser.current()?.username!)!)
+            query.findObjectsInBackground(block: { (objects, error) in
+                if let riderRequests = objects {
+                    for riderRequest in riderRequests {
+                        if let driverUsername = riderRequest["driverResponded"] {
+                            let query = PFQuery(className: "DriverLocation")
+                            query.whereKey("username", equalTo: driverUsername)
+                            query.findObjectsInBackground(block: { (objects, error) in
+                                if let driverLocations = objects {
+                                    for driverLocationObject in driverLocations {
+                                        if let driverLocation = driverLocationObject["location"] as? PFGeoPoint {
+                                            let driverCLLocation = CLLocation(latitude: driverLocation.latitude, longitude: driverLocation.longitude)
+                                            let riderCLLocation = CLLocation(latitude:self.userLocation.latitude, longitude: self.userLocation.longitude)
+                                            let distance = driverCLLocation.distance(from: riderCLLocation) / 1000
+                                            let roundedDistance = round(distance * 100) / 100
+                                            self.callTransBtn.setTitle("Driver is on his way, and is about \(roundedDistance)km away!", for: [])
+                                        }
+                                    }
+                                }
+                            })
+                        }
+                    }
+                }
+            })
+        }
     }
     
     override func viewDidLoad() {
